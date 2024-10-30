@@ -44,6 +44,19 @@ describe('Login Tests', () => {
             .clickLogin()
             .errorMessageControl("Kullanıcı bilgileri hatalıdır")
 
-        
+
+    })
+
+    it('Boş karakter kontrolü', () => {
+
+        var mail = "canercakman16@gmail.com"
+
+        loginPage.clearEmail()
+            .clearPassword()
+            .clickLogin()
+        baseLibrary.wait(5000)
+
+    loginPage.requiredMessageControl("Bu alan zorunludur.")
+
     })
 })
